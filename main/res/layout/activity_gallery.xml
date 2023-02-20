@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Gallery"
+    android:background="?attr/bgColor">
+
+    <ImageButton
+        android:id="@+id/remove_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="사진 제거 버튼"
+        android:padding="0sp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/titleleft_line"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_line2"
+        app:srcCompat="?attr/remove" />
+
+    <ImageButton
+        android:id="@+id/serch_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="15dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="상세정보버튼"
+        android:padding="0sp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/titleright_line"
+        app:layout_constraintTop_toTopOf="@+id/btn_line2"
+        app:srcCompat="?attr/serch" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/btn_line2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <TextView
+        android:id="@+id/productname"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="갤러리"
+        app:layout_constraintBottom_toTopOf="@+id/title_line"
+        app:layout_constraintEnd_toStartOf="@+id/titleright_line"
+        app:layout_constraintStart_toStartOf="@+id/titleleft_line"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        android:textColor="?attr/textColor"
+        android:textSize="40sp"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/titleleft_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/titleright_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7" />
+
+    <GridView
+        android:id="@+id/gridView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:numColumns="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/title_line" >
+
+    </GridView>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_line2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/title_line"
+        tools:srcCompat="@color/black" />
+
+    <com.example.iseeyou.ResultView
+        android:id="@+id/resultView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/btn_line2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/title_line" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="15dp"
+        android:dividerHeight="10dp"
+        android:divider="#00000000"
+        android:stackFromBottom="true"
+        app:layout_constraintBottom_toBottomOf="@+id/resultView"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/resultView" />
+
+    <ImageButton
+        android:id="@+id/back_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="40dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="뒤로가기버튼"
+        android:padding="0sp"
+        android:scaleType="centerInside"
+        android:src="?attr/backbtn"
+        app:layout_constraintBottom_toTopOf="@+id/title_line"
+        app:layout_constraintEnd_toStartOf="@+id/titleleft_line"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/setting_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="40dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="설정버튼"
+        android:padding="0sp"
+        android:scaleType="centerInside"
+        android:src="?attr/setbtn"
+        app:layout_constraintBottom_toTopOf="@+id/title_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/titleright_line"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
